@@ -1,56 +1,81 @@
 class Corsa { //class corsa noes un objeto, es un moldes para asignar objetos del mismo tipo.
-    var property color 
+    const color
 
-    method capPasajeros() = 4
+    method capacidad() = 4
     method velMax() = 150
     method peso() = 1300 
+    method color() = color 
 }
 
 class Kwid {
-    var property tanqueAdicional
+    const tanqueAdicional
 
-    method capPasajeros() = if(tanqueAdicional) 3 else 4
+    method capacidad() = if(tanqueAdicional) 3 else 4
     method velMax() = if(tanqueAdicional) 120 else 110
     method peso() = 1200 + if(tanqueAdicional) 150 else 0
-    method color() = 'azul'
+    method color() = azul
+}
+
+class Especial {
+    const property capacidad
+    const property velMax
+    const peso   
+    const color
+
+    method peso() = peso
+    method color() = color 
 }
 
 object trafic {
-    var property interior = interiorComodo
-    var property motor = pulenta
+    var  interior = comodo
+    var  motor = pulenta
 
-    method capPasajeros() = interior.capPasajeros()
-    method velMax() = motor.vel() 
+    method capacidad() = interior.capacidad()
+    method velMax() = motor.velMax() 
     method peso() = 4000 + interior.peso() + motor.peso()
-    method color() = 'blanco' 
+    method color() = blanco
+
+    method cambioInterior(nuevoInterior) {
+        interior = nuevoInterior
+    }
+    method cambioMotor(nuevoMotor) {
+        motor = nuevoMotor
+    }
 }
 
-object interiorComodo {
-    method capPasajeros() = 5
+object comodo {
+    method capacidad() = 5
     method peso() = 700  
 }
 
-object interiorPopular {
-    method capPasajeros() = 12 
+object popular {
+    method capacidad() = 12 
     method peso() = 1000 
 }
 
 object pulenta {
     method peso() = 800
-    method vel() = 130  
+    method velMax() = 130  
 }
 
 object bataton {
-    method peso() = 50
-    method vel() = 80  
-}
-
-class Especial {
-    const property peso  
-    var property color
-    var property capPasajeros
-    var property velMax  
+    method peso() = 500
+    method velMax() = 80  
 }
 
 
 
+object blanco {
+  
+}
+object azul {
+  
+}
+
+object rojo {
+  
+}
+
+object verde {
+  
+}

@@ -1,0 +1,69 @@
+import rodados.*
+import dependencia.*
+
+describe "probando un corsa" {
+    const corsa1 = new Corsa(color = rojo)
+  
+    test "su capacidad" {
+        assert.equals(4, corsa1.capacidad())
+    }
+  
+    test "su velocidad" {
+        assert.equals(150, corsa1.velMax())
+    }
+
+    test "su peso" {
+        assert.equals(1300, corsa1.peso())
+    }
+}
+
+describe "probando un kwid" {
+    const kwidcito1 = new Kwid(tanqueAdicional = true)
+    const kwidcito2 = new Kwid(tanqueAdicional = false)
+
+    test "su capacidad" {
+        assert.equals(3, kwidcito1.capacidad())
+        assert.equals(4, kwidcito2.capacidad())
+    }
+  
+    test "su velocidad" {
+        assert.equals(120, kwidcito1.velMax())
+        assert.equals(110, kwidcito2.velMax())
+    }
+
+    test "su peso" {
+        assert.equals(1350, kwidcito1.peso())
+        assert.equals(1200, kwidcito2.peso())
+    }
+
+    test "color" {
+        assert.equals(azul, kwidcito1.color())
+    }
+}
+
+describe "probando la trafic" {
+
+    test "su capacidad con interior comodo" {
+        assert.equals(5, trafic.capacidad())
+    }
+    test "su capacidad con interior popular" {
+        trafic.cambioInterior(popular)
+        assert.equals(12, trafic.capacidad())
+    }
+  
+    test "su velocidad con motor pulenta" {
+        assert.equals(130, trafic.velMax())
+    }
+    test "su velocidad con motor bataton" {
+        trafic.cambioMotor(bataton)
+        assert.equals(80, trafic.velMax())
+    }
+
+    test "su peso" {
+        assert.equals(1350, trafic.peso())
+    }
+
+    test "color" {
+        assert.equals(azul, trafic.color())
+    }
+}
